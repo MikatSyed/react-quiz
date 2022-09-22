@@ -23,7 +23,7 @@ export default function UseVideoList(page){
             setError(false);
             setLoading(true);
             const snapshot = await get(videoQuery);
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
             setLoading(false);
             if(snapshot.exists()){
                 setVideos((prevVideos)=> {
@@ -38,7 +38,9 @@ export default function UseVideoList(page){
               setError(true)
             }
         }
-        getAllData()
+        setTimeout(()=>{
+            getAllData()
+        },100)
     },[page])
 
     return {
